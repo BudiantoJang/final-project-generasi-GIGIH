@@ -1,0 +1,11 @@
+<h1>All Orders</h1>
+
+<% @order_details.each do |details|%>
+  <div class = "item-content">
+    <h2> Check Number :<%= details.id%> </h2>
+    <p> Item Name : <%= details.item.name%>
+    <p> Item Price : <%= details.item.price%>
+    <p> Quantity bought: <%= details.quantity%>
+    <p> Total price : <%= details.total_price %>
+  </div>
+<%end%>
