@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "/" => "home#top"
+  
   get "items" => "items#index"
   get "items/new" => "items#new"
   post "items/create" => "items#create"
