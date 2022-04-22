@@ -18,4 +18,11 @@ Rails.application.routes.draw do
   post "order_details/:order_id/create" => "order_details#create"
   post "order_details/:order_id/:id/destroy" => "order_details#destroy"
  
+  get "orders" => "customers#index"
+  get "orders/revenue" => "orders#revenue"
+  get "/orders/revenue/:date" => "orders#revenue_detail"
+  post "/orders/:id/change_status" => "orders#change_status"
+  get "orders/:id" => "orders#show"
+  post "orders/:id/create" => "orders#create"
+  post "orders/:id/destroy" => "orders#destroy"
 end
