@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_22_154749) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_22_154924) do
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "item_categories", force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_item_categories_on_category_id"
+    t.index ["item_id"], name: "index_item_categories_on_item_id"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -19,4 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_22_154749) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "item_categories", "categories"
+  add_foreign_key "item_categories", "items"
 end
