@@ -1,0 +1,20 @@
+<h1>Register Customer</h1>
+
+<% @customer.errors.full_messages.each do |message|%>
+    <%= message%>
+<%end%>
+
+    <%= @error_messages%>
+
+<%= form_tag("/customers/create") do %>
+    <div class ="form">
+        <p>Name</p>
+        <input name="name" value = "<%= @customer.name %>">
+        <p>Email</p>
+        <input name="email" value = "<%= @customer.email %>">
+        <input type="submit" value="Save">
+    </div>
+
+
+<%end %>
+

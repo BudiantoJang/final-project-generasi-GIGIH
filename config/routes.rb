@@ -25,4 +25,9 @@ Rails.application.routes.draw do
   get "orders/:id" => "orders#show"
   post "orders/:id/create" => "orders#create"
   post "orders/:id/destroy" => "orders#destroy"
+
+  get "customers" => "customers#index"
+  get "customers/new" => "customers#new"
+  post "customers/create" => "customers#create"
+  post "customers/:id/destroy" => "customers#destroy"
 end
