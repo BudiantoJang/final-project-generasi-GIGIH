@@ -15,7 +15,7 @@
         <input name="price" value = "<%= @item.price %>">
         <p>Category (separate with "," (1,2,3)</p>
         <ul>
-            <%Category.all.each do |category|%>
+            <%  @categories.each do |category|%>
                 <li>
                     <%= category.id %>. <%= category.name %>
                     <br>

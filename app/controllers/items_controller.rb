@@ -28,9 +28,11 @@ class ItemsController < ApplicationController
 
     def edit
         @item = Item.find_by(id: params[:id])
+        @categories = Category.all
     end
 
     def update
+        @categories = Category.all
         @item = Item.find_by(id: params[:id])
         @item.name = params[:name]
         @item.description = params[:description]

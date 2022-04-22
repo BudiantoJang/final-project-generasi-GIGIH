@@ -10,6 +10,7 @@ class OrderDetailsController < ApplicationController
     end
 
     def create
+        @items = Item.all
         if @item = Item.find_by(name: params[:item_name])
             @total_price = @item.price * params[:quantity].to_i
             @order_detail = OrderDetail.new(
