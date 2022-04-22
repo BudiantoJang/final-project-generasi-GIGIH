@@ -1,0 +1,18 @@
+<h1>Make an item</h1>
+
+<% @category.errors.full_messages.each do |message|%>
+    <%= message%>
+<%end%>
+
+    <%= @error_messages%>
+
+<%= form_tag("/categories/create") do %>
+    <div class ="form">
+        <p>Name</p>
+        <input name="name" value = "<%= @category.name %>">
+        <input type="submit" value="Save">
+    </div>
+
+
+<%end %>
+
