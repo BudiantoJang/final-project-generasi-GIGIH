@@ -53,6 +53,11 @@ Then migrate your data again and load the dummy data again using
     rails db:migrate
     rails db:seed
 ```
+After that you can start your local server again and the "whenever" gem will work perfectly
+
+```bash
+    rails server
+```
 
 
 <h3 align="left">Languages and Tools:</h3>
