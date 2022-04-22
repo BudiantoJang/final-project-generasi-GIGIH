@@ -1,0 +1,26 @@
+<h1>Edit an item</h1>
+
+<% @item.errors.full_messages.each do |message|%>
+    <%= message%>
+<%end%>
+
+<%= form_tag("/items/#{@item.id}/update") do %>
+    <div class ="form">
+        
+        <p>Name</p>
+        <input name="name" value = "<%= @item.name %>">
+        <p>Description</p>
+        <input name="description" value = "<%= @item.description %>">
+        <p>Price</p>
+        <input name="price" value = "<%= @item.price %>">
+        <p>Category (separate with "," (1,2,3)</p>
+        <%Category.all.each do |category|%>
+            <%= category.id %>
+            <%= category.name %>
+            <br>
+        <%end%>
+        <br>
+        <input name= "category">
+        <input type="submit" value="Save">
+    </div>
+<%end %>

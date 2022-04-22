@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>All Items</h1>
+
+  <div class = "item-content">
+    <h2> Name :<%= @item.name %> </h2>
+    <p> Description:  <%= @item.description%> </p>
+    <p> Price: <%= @item.price%> </p>
+    <p> Categories: <% @item.categories.each do |category|%>
+        <%= category.name%> 
+    <%end%>
+    </p>
+    <p> Created_at: <%= @item.created_at%>
+    <p> <%= link_to("Edit", "/items/#{@item.id}/edit")%></p>
+    <p> <%= button_to("Delete", "/items/#{@item.id}/destroy")%></p>
+  </div>
