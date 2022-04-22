@@ -37,6 +37,15 @@ The dummy data has been loaded and the server is ready to be launched. you can s
 * format: { with: URI::MailTo::EMAIL_REGEXP } = make sure email have correct format
 * length: {maximum: 150} = limiting data to 150 characters long
 * numericality: {greater_than: 0.01} = make sure thed data is integer or float and make sure its greater than 0.01
+* Clock validation using gem "whenever". This gem will check every order status that did not have "PAID" status until 05:00pm and change it to "CANCELED"
+
+## Running Clock Validation in Local Environment
+
+When running local server, we always use development environment. But gem "whenever" used production environment so here is the command to change rails environment in your bash or shell
+
+```bash
+    export RAILS_ENV=production
+```
 
 
 <h3 align="left">Languages and Tools:</h3>

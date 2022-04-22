@@ -10,4 +10,8 @@ class Order < ApplicationRecord
         end
         return total_revenue
     end
+
+    def self.change_status
+        where.not(status: "PAID").where(created_at: Date.today.beginning_of_day..Date.today.end_of_day).update_all(status: "CANCELED")
+    end
 end
