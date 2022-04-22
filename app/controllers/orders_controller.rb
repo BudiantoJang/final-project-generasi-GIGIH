@@ -30,7 +30,15 @@ class OrdersController < ApplicationController
     end
 
     def revenue
-        @orders = Order.all
+        @orders = Order.all.order(created_at: :desc)
+        @dates = []
+        @temp_date = ""
+        @orders.each do |order|
+            if order.created_at.beginning_of_day.to_date != @temp_date
+                @dates << order.created_at.beginning_of_day.to_date
+            end
+            @temp_date = order.created_at.beginning_of_day.to_date
+        end
     end
 
     def revenue_detail
