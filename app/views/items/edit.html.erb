@@ -14,11 +14,14 @@
         <p>Price</p>
         <input name="price" value = "<%= @item.price %>">
         <p>Category (separate with "," (1,2,3)</p>
-        <%Category.all.each do |category|%>
-            <%= category.id %>
-            <%= category.name %>
-            <br>
-        <%end%>
+        <ul>
+            <%Category.all.each do |category|%>
+                <li>
+                    <%= category.id %>. <%= category.name %>
+                    <br>
+                </li>
+            <%end%>
+        </ul>
         <br>
         <input name= "category">
         <input type="submit" value="Save">

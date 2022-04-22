@@ -13,4 +13,9 @@ Rails.application.routes.draw do
   get "categories/new" => "categories#new"
   post "categories/create" => "categories#create"
   post "categories/:id/destroy" => "categories#destroy"
+
+  get "order_details/:order_id/new" => "order_details#new"
+  post "order_details/:order_id/create" => "order_details#create"
+  post "order_details/:order_id/:id/destroy" => "order_details#destroy"
+ 
 end
