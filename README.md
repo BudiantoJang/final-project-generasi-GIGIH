@@ -1,5 +1,8 @@
 # GIGIH Family Catering
 
+Name : Budianto <br>
+ID : KM_G2BE1101
+
 This is a project that I made in order to fullfill the final project task given from Generasi GIGIH team
 
 ## Study Case 
@@ -45,6 +48,13 @@ When running local server, we always use development environment. But gem "whene
 
 ```bash
     export RAILS_ENV=production
+```
+
+Then migrate your data again and load the dummy data again using
+
+```bash
+    rails db:migrate
+    rails db:seed
 ```
 
 
