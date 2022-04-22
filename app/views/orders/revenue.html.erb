@@ -1,0 +1,3 @@
+<% @orders.each do |order|%>
+    <%=link_to(order.created_at.beginning_of_day.to_date, "/orders/revenue/#{order.created_at.to_date}")%>
+<%end%>

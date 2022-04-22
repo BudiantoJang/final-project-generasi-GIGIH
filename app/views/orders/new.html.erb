@@ -1,0 +1,23 @@
+<h1>Make an item</h1>
+
+<% @item.errors.full_messages.each do |message|%>
+    <%= message%>
+<%end%>
+
+    <%= @error_messages%>
+    
+<%= form_tag("/items/create") do %>
+    <div class ="form">
+        
+        <p>Name</p>
+        <input name="name" value = "<%= @item.name %>">
+        <p>Description</p>
+        <input name="description" value = "<%= @item.description %>">
+        <p>Price</p>
+        <input name="price" value = "<%= @item.price %>">
+        <p>Category</p>
+        <input name="category">
+        <input type="submit" value="Save">
+    </div>
+<%end %>
+

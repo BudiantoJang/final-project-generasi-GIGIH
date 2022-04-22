@@ -1,0 +1,14 @@
+<h1>Order Details</h1>
+
+<%=link_to("Make new order detail", "/order_details/#{params[:id]}/new")%>
+<%=button_to("Change status", "/orders/#{params[:id]}/change_status")%>
+<% @order.each do |detail|%>
+  <div class = "item-content">
+    <h2> Item Name :<%= detail.item.name%> </h2>
+    <p> Item description :<%= detail.item.description%> </p>
+    <p> Item price :<%= detail.item.price%> </p>
+    <p> Quantity :<%= detail.quantity%> </p>
+    <p> Total price :<%= detail.total_price%> </p>
+    <%= button_to("Delete order detail", "/order_details/#{params[:id]}/#{detail.id}/destroy")%>
+  </div>
+<%end%>

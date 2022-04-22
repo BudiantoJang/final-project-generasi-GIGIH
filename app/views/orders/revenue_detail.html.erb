@@ -1,0 +1,13 @@
+<h1>Todays total revenue : <%= @orders.revenue %></h1>
+
+<%@orders.each do |order|%>
+    <h2><%=order.customer.name%></h2>
+    <p><%=order.customer.email%></p>
+    <p>Total spending : <%=order.final_price%></p>
+    <p>Breakdown : </p>
+    <ul>
+        <%order.order_details.each do |details|%>
+            <p><%=details.total_price%></p>
+        <%end%>
+    </ul>
+<%end%>
